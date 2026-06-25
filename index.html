@@ -1,0 +1,260 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,400;1,600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+.flyer{background:#f7f4ee;width:100%;max-width:500px;margin:0 auto;overflow:hidden;font-family:'DM Sans',sans-serif;}
+.top-bar{background:#1a5c35;padding:9px 28px;display:flex;align-items:center;justify-content:space-between;}
+.top-bar-text{font-size:9px;font-weight:500;letter-spacing:3px;color:#a8d4b8;text-transform:uppercase;}
+.top-bar-line{flex:1;height:1px;background:#2d8a52;margin:0 12px;}
+.hero{padding:38px 32px 26px;background:#f7f4ee;position:relative;overflow:hidden;}
+.hero-corner{position:absolute;top:0;right:0;width:140px;height:140px;background:#edf5f0;clip-path:polygon(100% 0,0 0,100% 100%);}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:16px;position:relative;z-index:1;}
+.eyebrow-line{width:28px;height:1px;background:#1a5c35;}
+.eyebrow-text{font-size:9px;font-weight:500;letter-spacing:2.5px;color:#1a5c35;text-transform:uppercase;}
+.hero-title{font-family:'Playfair Display',serif;font-size:62px;font-weight:900;color:#1a2e1a;line-height:0.92;letter-spacing:-2px;margin-bottom:10px;position:relative;z-index:1;}
+.hero-title em{color:#1a5c35;font-style:normal;}
+.hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:#8a6c2a;margin-bottom:6px;line-height:1.3;}
+.hero-sub2{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:#b89a4a;margin-bottom:18px;line-height:1.3;}
+.hero-tagline{font-size:10px;color:#5a7a65;letter-spacing:0.5px;font-weight:300;border-left:2px solid #1a5c35;padding-left:10px;line-height:1.7;}
+.div-wrap{padding:14px 32px;display:flex;align-items:center;}
+.div-line{flex:1;height:1px;background:#ddd8cc;}
+.div-diamond{width:5px;height:5px;background:#1a5c35;transform:rotate(45deg);margin:0 12px;flex-shrink:0;}
+.datetime-strip{margin:0 32px;background:#fff;border:1px solid #e0dbd0;border-radius:4px;display:grid;grid-template-columns:1fr 1fr;}
+.dt-item{padding:14px 18px;}
+.dt-item:first-child{border-right:1px solid #e0dbd0;}
+.dt-key{font-size:9px;letter-spacing:2px;color:#1a5c35;text-transform:uppercase;margin-bottom:4px;font-weight:500;}
+.dt-val{font-family:'Playfair Display',serif;font-size:14px;color:#1a2e1a;font-weight:700;line-height:1.3;}
+.dt-val small{display:block;font-family:'DM Sans',sans-serif;font-size:10px;color:#8a8278;font-weight:300;margin-top:1px;}
+.stay-banner{margin:10px 32px 0;background:#1a5c35;border-radius:4px;padding:12px 18px;display:flex;align-items:center;justify-content:space-between;}
+.stay-left{color:#a8d4b8;font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:500;}
+.stay-center{font-family:'Playfair Display',serif;font-size:13px;color:#fff;font-weight:700;text-align:center;}
+.stay-right{color:#6aaa84;font-size:9px;letter-spacing:1px;text-transform:uppercase;font-weight:500;text-align:right;}
+.section-label{padding:22px 32px 10px;font-size:9px;letter-spacing:2.5px;color:#1a5c35;text-transform:uppercase;font-weight:500;}
+.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e0dbd0;margin:0 32px;}
+.venue-card{background:#fff;padding:18px 16px;}
+.venue-num{font-family:'Playfair Display',serif;font-size:38px;font-weight:900;color:#edeae2;line-height:1;margin-bottom:5px;}
+.venue-tag{display:inline-block;background:#edf5f0;color:#1a5c35;font-size:8px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;padding:3px 7px;border-radius:2px;margin-bottom:8px;}
+.venue-tag.gold{background:#faf4e8;color:#7a5c18;}
+.venue-name{font-family:'Playfair Display',serif;font-size:12px;font-weight:700;color:#1a2e1a;line-height:1.35;margin-bottom:5px;}
+.venue-detail{font-size:9px;color:#8a8278;font-weight:300;line-height:1.5;margin-bottom:6px;}
+.venue-loc a{font-size:9px;color:#1a5c35;text-decoration:none;font-weight:500;}
+.agenda-section{margin:16px 32px 0;}
+.agenda-title{font-size:9px;letter-spacing:2px;color:#1a5c35;text-transform:uppercase;font-weight:500;margin-bottom:10px;}
+.agenda-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.agenda-card{background:#fff;border:1px solid #e0dbd0;border-radius:4px;padding:14px;}
+.agenda-day{font-size:8px;letter-spacing:1.5px;color:#8a6c2a;text-transform:uppercase;font-weight:500;margin-bottom:8px;}
+.agenda-item{display:flex;gap:8px;margin-bottom:7px;align-items:flex-start;}
+.agenda-dot{width:4px;height:4px;background:#1a5c35;border-radius:50%;flex-shrink:0;margin-top:4px;}
+.agenda-text{font-size:10px;color:#3a4a3a;font-weight:400;line-height:1.4;}
+.tujuan-section{margin:16px 32px 0;background:#fff;border:1px solid #e0dbd0;border-radius:4px;padding:18px;}
+.tujuan-title{font-size:9px;letter-spacing:2px;color:#1a5c35;text-transform:uppercase;font-weight:500;margin-bottom:12px;}
+.tujuan-items{display:flex;flex-direction:column;gap:8px;}
+.tujuan-item{display:flex;gap:10px;align-items:flex-start;}
+.t-num{font-family:'Playfair Display',serif;font-size:18px;font-weight:900;color:#edeae2;line-height:1;flex-shrink:0;width:20px;}
+.t-text{font-size:10px;color:#3a4a3a;line-height:1.5;font-weight:300;}
+.budget-section{margin:16px 32px 0;}
+.budget-title{font-size:9px;letter-spacing:2px;color:#1a5c35;text-transform:uppercase;font-weight:500;margin-bottom:10px;}
+.budget-table{width:100%;background:#fff;border:1px solid #e0dbd0;border-radius:4px;overflow:hidden;border-collapse:collapse;}
+.budget-table th{background:#1a5c35;color:#a8d4b8;font-size:9px;font-weight:500;letter-spacing:1px;text-transform:uppercase;padding:8px 12px;text-align:left;}
+.budget-table th:last-child,.budget-table td:last-child{text-align:right;}
+.budget-table td{font-size:10px;color:#3a4a3a;padding:8px 12px;border-top:1px solid #f0ece4;font-weight:300;}
+.budget-table tr:last-child td{background:#f7f4ee;font-weight:500;color:#1a2e1a;border-top:1px solid #e0dbd0;}
+
+.payment-section{margin:16px 32px 0;}
+.payment-title{font-size:9px;letter-spacing:2px;color:#1a5c35;text-transform:uppercase;font-weight:500;margin-bottom:10px;}
+.payment-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.pay-card{background:#fff;border:1px solid #e0dbd0;border-radius:4px;overflow:hidden;}
+.pay-header{padding:8px 14px;font-size:8px;font-weight:500;letter-spacing:1.5px;text-transform:uppercase;}
+.pay-header.green{background:#edf5f0;color:#1a5c35;}
+.pay-header.gold{background:#faf4e8;color:#7a5c18;}
+.pay-body{padding:14px;}
+.pay-purpose{font-size:8px;color:#8a8278;font-weight:300;margin-bottom:8px;line-height:1.4;}
+.pay-bank{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#8a6c2a;margin-bottom:2px;}
+.pay-rek{font-size:12px;font-weight:500;color:#1a2e1a;letter-spacing:1px;margin-bottom:1px;}
+.pay-an{font-size:9px;color:#8a8278;font-weight:300;margin-bottom:10px;}
+.pay-sep{height:1px;background:#f0ece4;margin-bottom:10px;}
+.pay-wa-label{font-size:8px;letter-spacing:1.5px;color:#1a5c35;text-transform:uppercase;font-weight:500;margin-bottom:3px;}
+.pay-wa-num{font-size:11px;font-weight:500;color:#1a2e1a;margin-bottom:1px;}
+.pay-wa-name{font-size:9px;color:#8a8278;font-weight:300;}
+
+.closing-quote{margin:20px 32px 4px;border-left:2px solid #1a5c35;padding-left:14px;}
+.closing-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:#4a6a54;line-height:1.7;margin-bottom:4px;}
+.closing-sub{font-size:9px;color:#8a8278;font-weight:300;}
+.closing-row{margin:16px 32px 28px;display:flex;justify-content:space-between;align-items:flex-end;}
+.jumpa-big{font-family:'Playfair Display',serif;font-size:28px;font-weight:900;color:#1a2e1a;line-height:1.05;margin-bottom:5px;}
+.jumpa-sub{font-size:9px;letter-spacing:1px;color:#1a5c35;text-transform:uppercase;font-weight:500;}
+.thankyou{text-align:right;font-size:10px;color:#8a8278;font-weight:300;line-height:1.8;}
+.footer-bar{background:#1a5c35;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.footer-arabic{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:12px;color:#a8d4b8;}
+.footer-dot{width:3px;height:3px;background:#2d8a52;border-radius:50%;flex-shrink:0;}
+.footer-salam{font-size:9px;color:#6aaa84;text-align:right;line-height:1.6;}
+</style>
+
+<div class="flyer">
+
+  <div class="top-bar">
+    <span class="top-bar-text">Undangan Kegiatan</span>
+    <div class="top-bar-line"></div>
+    <span class="top-bar-text">1448 H</span>
+  </div>
+
+  <div class="hero">
+    <div class="hero-corner"></div>
+    <div class="hero-eyebrow">
+      <div class="eyebrow-line"></div>
+      <span class="eyebrow-text">Hari Asyura · 10 Muharram</span>
+      <div class="eyebrow-line"></div>
+    </div>
+    <div class="hero-title">Berbagi<br><em>Ber</em>kah</div>
+    <div class="hero-sub">Mengukir Senyum Anak Yatim</div>
+    <div class="hero-sub2">10 Muharram 1448 Hijriah</div>
+    <div class="hero-tagline">
+      Santunan · Tausiyah · Menginap Bersama<br>
+      Mempererat Ukhuwah, Meraih Keberkahan
+    </div>
+  </div>
+
+  <div class="div-wrap">
+    <div class="div-line"></div><div class="div-diamond"></div><div class="div-line"></div>
+  </div>
+
+  <div class="datetime-strip">
+    <div class="dt-item">
+      <div class="dt-key">Mulai</div>
+      <div class="dt-val">Sabtu, 27 Juni<small>2026 · 09.00 WIB</small></div>
+    </div>
+    <div class="dt-item">
+      <div class="dt-key">Selesai</div>
+      <div class="dt-val">Minggu, 28 Juni<small>2026 · Setelah sarapan</small></div>
+    </div>
+  </div>
+
+  <div class="stay-banner">
+    <div class="stay-left">Sabtu pagi</div>
+    <div class="stay-center">Kegiatan → Menginap Villa → Pulang Minggu</div>
+    <div class="stay-right">Minggu siang</div>
+  </div>
+
+  <div class="section-label">Lokasi Acara</div>
+
+  <div class="venue-grid">
+    <div class="venue-card">
+      <div class="venue-num">01</div>
+      <div class="venue-tag">Kegiatan Utama</div>
+      <div class="venue-name">PP Tahfidz Al Quran Ibnu Jauzi</div>
+      <div class="venue-detail">Jl. Sawah Baru, Babakan, Dramaga, Kab. Bogor 16680</div>
+      <div><a class="venue-loc" href="https://maps.app.goo.gl/QZ4YyYVmzMYseBNF9">Lihat peta ↗</a></div>
+    </div>
+    <div class="venue-card">
+      <div class="venue-num">02</div>
+      <div class="venue-tag gold">Menginap Bersama</div>
+      <div class="venue-name">Villa Sunrise Bogor</div>
+      <div class="venue-detail">Check-in setelah kegiatan · Check-out Minggu pagi · Rp 150.000/orang (makan 3×)</div>
+      <div><a class="venue-loc" href="https://maps.app.goo.gl/KBUwo9qfqn1KyCB88">Lihat peta ↗</a></div>
+    </div>
+  </div>
+
+  <div class="agenda-section">
+    <div class="agenda-title">Susunan Acara</div>
+    <div class="agenda-grid">
+      <div class="agenda-card">
+        <div class="agenda-day">Sabtu · 27 Juni</div>
+        <div class="agenda-item"><div class="agenda-dot"></div><div class="agenda-text">Dzikir bersama & tausiyah makna Asyura</div></div>
+        <div class="agenda-item"><div class="agenda-dot"></div><div class="agenda-text">Santunan anak yatim/piatu/dhuafa</div></div>
+        <div class="agenda-item"><div class="agenda-dot"></div><div class="agenda-text">Ramah tamah & makan siang bersama</div></div>
+        <div class="agenda-item"><div class="agenda-dot"></div><div class="agenda-text">Pindah ke Villa Sunrise untuk menginap</div></div>
+      </div>
+      <div class="agenda-card">
+        <div class="agenda-day">Minggu · 28 Juni</div>
+        <div class="agenda-item"><div class="agenda-dot"></div><div class="agenda-text">Subuh berjamaah & kultum pagi</div></div>
+        <div class="agenda-item"><div class="agenda-dot"></div><div class="agenda-text">Olahraga & waktu bebas bersama keluarga</div></div>
+        <div class="agenda-item"><div class="agenda-dot"></div><div class="agenda-text">Sarapan & sesi foto bersama</div></div>
+        <div class="agenda-item"><div class="agenda-dot"></div><div class="agenda-text">Check-out & pulang dengan penuh berkah</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tujuan-section">
+    <div class="tujuan-title">Tujuan Kegiatan</div>
+    <div class="tujuan-items">
+      <div class="tujuan-item"><div class="t-num">1</div><div class="t-text">Memperingati Hari Besar Islam 10 Muharram 1448 H sebagai momen refleksi dan syukur.</div></div>
+      <div class="tujuan-item"><div class="t-num">2</div><div class="t-text">Memberikan santunan kepada anak yatim/piatu/dhuafa agar mereka bersemangat menyongsong masa depan.</div></div>
+      <div class="tujuan-item"><div class="t-num">3</div><div class="t-text">Mempererat tali silaturahmi antarwarga dan membangun kebersamaan yang hangat.</div></div>
+    </div>
+  </div>
+
+  <div class="budget-section">
+    <div class="budget-title">Rencana Anggaran Santunan</div>
+    <table class="budget-table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th style="text-align:center">Qty</th>
+          <th style="text-align:right">Satuan</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Santunan uang saku</td><td style="text-align:center">25</td><td style="text-align:right">Rp 100.000</td><td style="text-align:right">Rp 2.500.000</td></tr>
+        <tr><td>Tas sekolah</td><td style="text-align:center">25</td><td style="text-align:right">Rp 45.000</td><td style="text-align:right">Rp 1.125.000</td></tr>
+        <tr><td>Buku tulis</td><td style="text-align:center">25</td><td style="text-align:right">Rp 25.000</td><td style="text-align:right">Rp 625.000</td></tr>
+        <tr><td>Paket alat tulis</td><td style="text-align:center">25</td><td style="text-align:right">Rp 40.000</td><td style="text-align:right">Rp 1.000.000</td></tr>
+        <tr><td colspan="3"><strong>Total Santunan</strong></td><td style="text-align:right"><strong>Rp 5.250.000</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="payment-section">
+    <div class="payment-title">Pembayaran &amp; Konfirmasi</div>
+    <div class="payment-grid">
+
+      <div class="pay-card">
+        <div class="pay-header green">Donasi Kegiatan</div>
+        <div class="pay-body">
+          <div class="pay-purpose">Untuk dana santunan anak yatim &amp; operasional acara 10 Muharram</div>
+          <div class="pay-bank">BCA</div>
+          <div class="pay-rek">4010533487</div>
+          <div class="pay-an">a.n. Rezi</div>
+          <div class="pay-sep"></div>
+          <div class="pay-wa-label">Konfirmasi</div>
+          <div class="pay-wa-num">0897-0806-415</div>
+          <div class="pay-wa-name">Hafiz · via WhatsApp</div>
+        </div>
+      </div>
+
+      <div class="pay-card">
+        <div class="pay-header gold">Registrasi Villa</div>
+        <div class="pay-body">
+          <div class="pay-purpose">Kontribusi menginap Villa Sunrise · Rp 150.000/orang termasuk makan 3×</div>
+          <div class="pay-bank">BCA</div>
+          <div class="pay-rek">1450086017</div>
+          <div class="pay-an">a.n. Rahma Dani</div>
+          <div class="pay-sep"></div>
+          <div class="pay-wa-label">Konfirmasi</div>
+          <div class="pay-wa-num">0896-8162-1279</div>
+          <div class="pay-wa-name">Rudi Hermawan · via WhatsApp</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="closing-quote">
+    <div class="closing-text">"Barangsiapa yang menyantuni anak yatim, maka aku dan dia akan bersama di surga seperti ini." — HR. Bukhari</div>
+    <div class="closing-sub">Mari jadikan momen ini ladang amal terbaik kita.</div>
+  </div>
+
+  <div class="closing-row">
+    <div>
+      <div class="jumpa-big">Sampai<br>Sabtu,</div>
+      <div class="jumpa-sub">insyaAllah · 27–28.06.26</div>
+    </div>
+    <div class="thankyou">Terima kasih atas<br>perhatian &amp; donasi<br>Bapak/Ibu.</div>
+  </div>
+
+  <div class="footer-bar">
+    <div class="footer-arabic">Jazakumullahu khairan katsiran</div>
+    <div class="footer-dot"></div>
+    <div class="footer-salam">Wassalamu'alaikum<br>Warahmatullahi Wabarakatuh</div>
+  </div>
+
+</div>
